@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MovieFlix</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #141414;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b3b3b3;
+}
+
+/* ================= HERO WITH VIDEO ================= */
+.hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #141414 10%, rgba(0,0,0,0.4));
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.hero-buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.play-btn {
+    background-color: white;
+    color: black;
+}
+
+.info-btn {
+    background-color: rgba(109,109,110,0.7);
+    color: white;
+}
+
+/* ================= MOVIE ROWS ================= */
+.row {
+    margin: 30px 5%;
+}
+
+.row h2 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.row-posters {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-behavior: smooth;
+}
+
+.row-posters::-webkit-scrollbar {
+    display: none;
+}
+
+.poster {
+    width: 180px;          
+    height: 270px;        
+    object-fit: cover;     
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.poster:hover {
+    transform: scale(1.08);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #757575;
+    font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .poster {
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .poster {
+        height: 150px;
+    }
+
+    .row h2 {
+        font-size: 1.1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <div class="logo">MovieFlix</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Movies</a>
+        <a href="#">My List</a>
+    </div>
+</div>
+
+<!-- ================= HERO SECTION WITH VIDEO ================= -->
+<div class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="video/trailer.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Featured Movie</h1>
+        <p>Watch the latest blockbuster movies and trending shows anytime, anywhere.</p>
+        <div class="hero-buttons">
+            <button class="play-btn">▶ Play</button>
+            <button class="info-btn">More Info</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MOVIE ROWS ================= -->
+<div class="row">
+    <h2>The 5 Best New Movies</h2>
+
+    <div class="row-posters">
+
+        <!-- MOVIE 1 -->
+        <a href="https://www.hbomax.com/ph/en/movies/companion/47556360-0bbf-4e3d-8d6d-53a0179e2153" target="_blank">
+            <img class="poster" src="images/Companion.jpg" alt="Watch it on HBO Max ">
+        </a>
+
+        <!-- MOVIE 2 -->
+        <a href="https://www.imdb.com/title/tt6208148/" target="_blank">
+            <img class="poster" src="images/snowwhite.jpg" alt="Watch it on IMDb">
+        </a>
+
+        <!-- MOVIE 3 -->
+        <a href="https://www.netflix.com/ph-en/title/81330790" target="_blank">
+            <img class="poster" src="images/havoc.jpg" alt="Watch it on NETFLIX">
+        </a>
+
+        <!-- MOVIE 4 -->
+        <a href="https://www.hbomax.com/movies/opus/1a5977b7-6df0-43aa-be50-2238c2536bc4" target="_blank">
+            <img class="poster" src="images/opus.jpg" alt="Watch it on HBO Max">
+        </a>
+
+        <!-- MOVIE 5 -->
+        <a href="https://www.justwatch.com/us/movie/round-the-decay" target="_blank">
+            <img class="poster" src="images/roundthedecay.jpg" alt="Watch it on JustWatch">
+        </a>
+
+    </div>
+</div>
+<!-- ================= FOOTER ================= -->
+<div class="footer">
+    © 2026 MovieFlix. All rights reserved.
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
