@@ -3,281 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MovieFlix</title>
+<title>Ampong-Bootstrap-4-Version</title>
+
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Font Awesome (for YouTube icon) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    background-color: #141414;
-    color: white;
-}
-
-/* ================= NAVBAR ================= */
-.navbar {
-    position: fixed;
-    width: 100%;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #e50914;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #b3b3b3;
-}
-
-/* ================= HERO WITH VIDEO ================= */
-.hero {
-    position: relative;
-    height: 90vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 0 5%;
-}
-
-.bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: -2;
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, #141414 10%, rgba(0,0,0,0.4));
-    z-index: -1;
-}
-
-.hero-content {
-    position: relative;
-    max-width: 600px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.hero-buttons button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 4px;
-}
-
-.play-btn {
-    background-color: white;
-    color: black;
-}
-
-.info-btn {
-    background-color: rgba(109,109,110,0.7);
-    color: white;
-}
-
-/* ================= MOVIE ROWS ================= */
-.row {
-    margin: 30px 5%;
-}
-
-.row h2 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-.row-posters {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    scroll-behavior: smooth;
-}
-
-.row-posters::-webkit-scrollbar {
-    display: none;
-}
-
-.poster {
-    width: 180px;          
-    height: 270px;        
-    object-fit: cover;     
-    border-radius: 6px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.poster:hover {
-    transform: scale(1.08);
-}
-
-/* ================= FOOTER ================= */
-.footer {
-    text-align: center;
-    padding: 30px;
-    color: #757575;
-    font-size: 14px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 2.2rem;
+    body {
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
     }
 
-    .poster {
-        height: 180px;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .navbar {
-        padding: 10px 5%;
+    .card img {
+        height: 400px;
+        object-fit: cover;
     }
 
-    .logo {
-        font-size: 20px;
+    .movie-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
     }
 
-    .nav-links {
-        display: none;
+    .movie-links a {
+        display: block;
+        font-size: 14px;
+        margin-top: 5px;
+        text-decoration: none;
     }
 
-    .hero {
-        height: 70vh;
+    footer {
+        background: #222;
+        color: white;
     }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .poster {
-        height: 150px;
-    }
-
-    .row h2 {
-        font-size: 1.1rem;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<div class="navbar">
-    <div class="logo">MovieFlix</div>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">TV Shows</a>
-        <a href="#">Movies</a>
-        <a href="#">My List</a>
-    </div>
-</div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <strong class="navbar-brand">MovieFlix</strong>
 
-<!-- ================= HERO SECTION WITH VIDEO ================= -->
-<div class="hero">
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="video/trailer.mp4" type="video/mp4">
-    </video>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-        <h1>Featured Movie</h1>
-        <p>Watch the latest blockbuster movies and trending shows anytime, anywhere.</p>
-        <div class="hero-buttons">
-            <button class="play-btn">▶ Play</button>
-            <button class="info-btn">More Info</button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">TV Shows</a>
+                <a class="nav-link" href="#">Movies</a>
+                <a class="nav-link" href="#">My List</a>
+            </div>
         </div>
     </div>
-</div>
+</nav>
 
-<!-- ================= MOVIE ROWS ================= -->
-<div class="row">
-    <h2>The 5 Best New Movies</h2>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">The 5 Best New Movies</h2>
 
-    <div class="row-posters">
+    <div class="row">
 
-        <!-- MOVIE 1 -->
-        <a href="https://www.hbomax.com/ph/en/movies/companion/47556360-0bbf-4e3d-8d6d-53a0179e2153" target="_blank">
-            <img class="poster" src="images/Companion.jpg" alt="Watch it on HBO Max ">
-        </a>
+        <!-- 1 column small, 2 medium, 3 large -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <img src="images/Companion.jpg" alt="Companion" class="card-img-top">
+                <div class="movie-title">Companion</div>
+                <div class="movie-links">
+                    <a href="https://www.hbomax.com/ph/en/movies/companion/47556360-0bbf-4e3d-8d6d-53a0179e2153/" target="_blank">Watch on HBO Max</a>
+                    <a href="https://tv.apple.com/us/movie/companion/umc.cmc.4ucrwm6dvaf3z2e9alwmfyo2x/" target="_blank">Watch on Apple TV</a>
+                    <a href="https://www.youtube.com/watch?v=Qr_kX0D3DNA/" target="_blank">
+                        <i class="fa-brands fa-youtube text-danger mr-1"></i>
+                        Companion | Official Trailer
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <!-- MOVIE 2 -->
-        <a href="https://www.imdb.com/title/tt6208148/" target="_blank">
-            <img class="poster" src="images/snowwhite.jpg" alt="Watch it on IMDb">
-        </a>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <img src="images/snowwhite.jpg" alt="Snow White" class="card-img-top">
+                <div class="movie-title">Snow White</div>
+                <div class="movie-links">
+                    <a href="https://tv.apple.com/us/movie/snow-white/umc.cmc.6u2jckaqzln7dp4mb403r4t3y/" target="_blank">Watch on Apple TV</a>
+                    <a href="https://moviesanywhere.com/movie/snow-white-2025/" target="_blank">Watch on Movies Anywhere</a>
+                    <a href="https://www.youtube.com/watch?v=iV46TJKL8cU/" target="_blank">
+                        <i class="fa-brands fa-youtube text-danger mr-1"></i>
+                        Disney’s Snow White | Official Trailer | In Theaters March 21
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <!-- MOVIE 3 -->
-        <a href="https://www.netflix.com/ph-en/title/81330790" target="_blank">
-            <img class="poster" src="images/havoc.jpg" alt="Watch it on NETFLIX">
-        </a>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <img src="images/havoc.jpg" alt="Havoc" class="card-img-top">
+                <div class="movie-title">Havoc</div>
+                <div class="movie-links">
+                    <a href="https://www.netflix.com/ph-en/title/81330790/" target="_blank">Watch on Netflix</a>
+                    <a href="https://www.imdb.com/title/tt14123284/" target="_blank">See Info on IMDb</a>
+                    <a href="https://www.youtube.com/watch?v=6txjTWLoSc8/" target="_blank">
+                        <i class="fa-brands fa-youtube text-danger mr-1"></i>
+                        HAVOC | Official Trailer | Netflix
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <!-- MOVIE 4 -->
-        <a href="https://www.hbomax.com/movies/opus/1a5977b7-6df0-43aa-be50-2238c2536bc4" target="_blank">
-            <img class="poster" src="images/opus.jpg" alt="Watch it on HBO Max">
-        </a>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <img src="images/opus.jpg" alt="Opus" class="card-img-top">
+                <div class="movie-title">Opus</div>
+                <div class="movie-links">
+                    <a href="https://tv.apple.com/us/movie/opus/umc.cmc.1ty1mv0jtz0saiuklc5didh4q/" target="_blank">Watch on Apple TV</a>
+                    <a href="https://www.hbomax.com/movies/opus/1a5977b7-6df0-43aa-be50-2238c2536bc4/" target="_blank">Watch on HBO Max</a>
+                    <a href="https://www.youtube.com/watch?v=5owo-kbx8X0&t=2s/" target="_blank">
+                        <i class="fa-brands fa-youtube text-danger mr-1"></i>
+                        Opus | Official Trailer HD | A24
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <!-- MOVIE 5 -->
-        <a href="https://www.justwatch.com/us/movie/round-the-decay" target="_blank">
-            <img class="poster" src="images/roundthedecay.jpg" alt="Watch it on JustWatch">
-        </a>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 p-3">
+                <img src="images/roundthedecay.jpg" alt="Round The Decay" class="card-img-top">
+                <div class="movie-title">Round The Decay</div>
+                <div class="movie-links">
+                    <a href="https://www.imdb.com/title/tt28104012/" target="_blank">Full Synopsis</a>
+                    <a href="https://www.dreamscapeproductions.com/round-the-decay/" target="_blank">See More Info</a>
+                    <a href="https://www.youtube.com/watch?v=9AVuAb22WPk/" target="_blank">
+                        <i class="fa-brands fa-youtube text-danger mr-1"></i>
+                        Round The Decay - Official Trailer
+                    </a>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
-<!-- ================= FOOTER ================= -->
-<div class="footer">
+
+<footer class="text-center py-4 mt-5">
     © 2026 MovieFlix. All rights reserved.
-</div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
